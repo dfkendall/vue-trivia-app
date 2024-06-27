@@ -1,0 +1,196 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+body {
+  background-color: #00296b;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
+
+.card {
+  border-radius: 3px;
+  text-align: center;
+  font-size: 25px;
+  color: #ffffff;
+  margin: 0px 15px 15px 10px !important;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    font-weight: 500;
+  }
+}
+
+.difficulty-card {
+  width: 530px;
+}
+
+.categories {
+  column-count: 4;
+}
+
+.answer-section {
+  column-count: 2;
+  margin-top: 20px;
+  .card {
+    padding: 12px;
+    font-size: 20px;
+  }
+}
+
+.title-text {
+  color: #ffd500;
+  font-weight: bold;
+}
+
+.subtitle-text {
+  color: #fdc500;
+  margin-bottom: 20px;
+  animation: 0.3s slide-up;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.incorrect-answer {
+  background-color: #c40000 !important;
+  animation: shake 0.4s;
+}
+
+.correct-answer {
+  background-color: #009919 !important;
+}
+
+/* .flashlight-text {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 48px;
+  color: #ffffff;
+  background: linear-gradient(to right, #fdc500 0, #ff0033 10%, #fdc500 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forward;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 32px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+} */
+
+@keyframes shake {
+  0% {
+    transform: translate(0.5px, 0.5px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-0.5px, -1px) rotate(-0.5deg);
+  }
+  20% {
+    transform: translate(-1.5px, 0px) rotate(0.5deg);
+  }
+  30% {
+    transform: translate(1.5px, 1px) rotate(0deg);
+  }
+  40% {
+    transform: translate(0.5px, -0.5px) rotate(0.5deg);
+  }
+  50% {
+    transform: translate(-0.5px, 1px) rotate(-0.5deg);
+  }
+  60% {
+    transform: translate(-1.5px, 0.5px) rotate(0deg);
+  }
+  70% {
+    transform: translate(1.5px, 0.5px) rotate(-0.5deg);
+  }
+  80% {
+    transform: translate(-0.5px, -0.5px) rotate(0.5deg);
+  }
+  90% {
+    transform: translate(0.5px, 1px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0.5px, -1px) rotate(-0.5deg);
+  }
+}
+
+.reveal {
+  color: #0000;
+  --g: no-repeat linear-gradient(#ffd500 0 0) 0 0;
+  background: var(--g), var(--g);
+  background-size: 0 100%;
+  -webkit-background-clip: padding-box, text;
+  background-clip: padding-box, text;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation:
+    slide-start 1.2s 0.5s both,
+    slide-end 1.2s 1.3s both;
+}
+@keyframes slide-start {
+  to {
+    background-size: 150% 100%;
+  }
+}
+@keyframes slide-end {
+  to {
+    background-position:
+      -200% 0,
+      0 0;
+  }
+}
+@keyframes slide-up {
+  from {
+    margin-top: 100%;
+    height: 300%;
+  }
+  to {
+    margin-top: 0%;
+    height: 100%;
+  }
+}
